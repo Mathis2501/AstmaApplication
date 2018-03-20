@@ -11,7 +11,10 @@ namespace AsthmaApp
     [Activity(Label = "AsthmaApp", MainLauncher = true, Icon = "@drawable/icon")]
     public class MainActivity : Activity
     {
-        int count = 1;
+		Button questionnaireButton;
+		Button mapButton;
+		Button rewardButton;
+		Button alarmButton;
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
@@ -21,10 +24,13 @@ namespace AsthmaApp
 
             // Get our button from the layout resource,
             // and attach an event to it
-            Button button = FindViewById<Button>(Resource.Id.MyButton);
+            questionnaireButton = FindViewById<Button>(Resource.Id.questionnairebutton);
+			mapButton = FindViewById<Button>(Resource.Id.mapbutton);
+			rewardButton = FindViewById<Button>(Resource.Id.rewardsbutton);
+			alarmButton = FindViewById<Button>(Resource.Id.alarmbutton);
 
-            button.Click += delegate { button.Text = string.Format("{0} clicks!", count++); };
-        }
+			//button.Click += delegate { button.Text = string.Format("{0} clicks!", count++); };
+		}
     }
 }
 
