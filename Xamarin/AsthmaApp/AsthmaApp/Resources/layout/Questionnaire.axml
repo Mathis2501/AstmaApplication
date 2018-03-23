@@ -10,4 +10,11 @@
         android:id="@+id/questionnairebutton"
         android:height="80dp"
         android:textSize="24dp" />
+    <Button
+        android:text="Finish"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/finishbutton"
+        android:height="80dp"
+        android:textSize="24dp" />
 </LinearLayout>
