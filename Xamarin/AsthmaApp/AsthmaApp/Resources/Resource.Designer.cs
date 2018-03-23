@@ -63,6 +63,9 @@ namespace AsthmaApp
 			// aapt resource value: 0x7f050003
 			public const int alarmbutton = 2131034115;
 			
+			// aapt resource value: 0x7f050004
+			public const int finishbutton = 2131034116;
+			
 			// aapt resource value: 0x7f050001
 			public const int mapbutton = 2131034113;
 			

@@ -3,11 +3,18 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-	<Button
-			android:text="Not yet implemented"
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:id="@+id/questionnairebutton"
-			android:height="80dp"
-			android:textSize="24dp" />
+    <Button
+        android:text="Not yet implemented"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/questionnairebutton"
+        android:height="80dp"
+        android:textSize="24dp" />
+    <Button
+        android:text="Finish"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/finishbutton"
+        android:height="80dp"
+        android:textSize="24dp" />
 </LinearLayout>

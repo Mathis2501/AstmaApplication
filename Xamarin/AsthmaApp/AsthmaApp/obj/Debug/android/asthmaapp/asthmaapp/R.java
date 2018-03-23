@@ -15,6 +15,7 @@ public final class R {
     }
     public static final class id {
         public static final int alarmbutton=0x7f050003;
+        public static final int finishbutton=0x7f050004;
         public static final int mapbutton=0x7f050001;
         public static final int questionnairebutton=0x7f050000;
         public static final int rewardsbutton=0x7f050002;

@@ -16,6 +16,7 @@ namespace AsthmaApp
 	public class QuestionnaireActivity : Activity
 	{
 		Button testButton;
+		Button finishButton;
 		protected override void OnCreate(Bundle savedInstanceState)
 		{
 			base.OnCreate(savedInstanceState);
@@ -23,14 +24,20 @@ namespace AsthmaApp
 			SetContentView(Resource.Layout.Questionnaire);
 
 			testButton = FindViewById<Button>(Resource.Id.questionnairebutton);
-
 			testButton.Click += TestButton_Click;
-			
+
+			finishButton = FindViewById<Button>(Resource.Id.finishbutton);
+			finishButton.Click += FinishButton_Click;
 		}
 
 		private void TestButton_Click(object sender, EventArgs e)
 		{
 			Toast.MakeText(this, "Hello", ToastLength.Long);
 		}
+		private void FinishButton_Click(object sender, EventArgs e)
+		{
+			Finish();
+		}
+
 	}
 }
