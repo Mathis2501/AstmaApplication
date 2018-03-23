@@ -15,14 +15,22 @@ namespace AsthmaApp
 	[Activity(Label = "QuestionnaireActivity")]
 	public class QuestionnaireActivity : Activity
 	{
+		Button testButton;
 		protected override void OnCreate(Bundle savedInstanceState)
 		{
 			base.OnCreate(savedInstanceState);
 
 			SetContentView(Resource.Layout.Questionnaire);
 
+			testButton = FindViewById<Button>(Resource.Id.questionnairebutton);
 
+			testButton.Click += TestButton_Click;
 			
+		}
+
+		private void TestButton_Click(object sender, EventArgs e)
+		{
+			Toast.MakeText(this, "Hello", ToastLength.Long);
 		}
 	}
 }

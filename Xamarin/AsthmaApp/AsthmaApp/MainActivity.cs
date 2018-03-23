@@ -29,8 +29,14 @@ namespace AsthmaApp
 			rewardButton = FindViewById<Button>(Resource.Id.rewardsbutton);
 			alarmButton = FindViewById<Button>(Resource.Id.alarmbutton);
 
-			//button.Click += delegate { button.Text = string.Format("{0} clicks!", count++); };
+
+			questionnaireButton.Click += QuestionnaireButton_Click;
 		}
-    }
+
+		private void QuestionnaireButton_Click(object sender, EventArgs e)
+		{
+			StartActivity(typeof(QuestionnaireActivity));
+		}
+	}
 }
 
