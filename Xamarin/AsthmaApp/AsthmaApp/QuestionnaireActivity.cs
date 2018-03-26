@@ -40,12 +40,19 @@ namespace AsthmaApp
 		}
 		private void FinishButton_Click(object sender, EventArgs e)
 		{
-			var locator = CrossGeolocator.Current;
-			locator.DesiredAccuracy = 50;
-			var position = locator.GetPositionAsync().Result;
-			Toast.MakeText(this, "Lat: "+position.Latitude + " - Long: "+position.Longitude, ToastLength.Long);
-			//Finish();
-		}
+            try
+            {
+                var locator = CrossGeolocator.Current;
+                locator.DesiredAccuracy = 50;
+                var position = locator.GetPositionAsync().Result;
+                Toast.MakeText(this, "Lat: " + position.Latitude + " - Long: " + position.Longitude, ToastLength.Long);
+            }
+            catch(Exception i)
+            {
+                Toast.MakeText(this, i.Message, ToastLength.Long);
+            }
+                //Finish();
+            }
 
 	}
 }
