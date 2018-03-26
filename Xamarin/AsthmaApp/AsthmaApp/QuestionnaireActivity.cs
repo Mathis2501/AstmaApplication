@@ -13,6 +13,8 @@ using Android.Widget;
 using Plugin.Permissions;
 using Plugin.Permissions.Abstractions;
 using Plugin.Geolocator;
+using Plugin.Geolocator.Abstractions;
+using System.Threading.Tasks;
 
 namespace AsthmaApp
 {
@@ -40,11 +42,17 @@ namespace AsthmaApp
 		}
 		private void FinishButton_Click(object sender, EventArgs e)
 		{
+			GetCurrentPosition(); // Wait() låser threaden
+			//Finish();
+		}
+
+		private async Task<Position> GetCurrentPosition()
+		{
 			var locator = CrossGeolocator.Current;
 			locator.DesiredAccuracy = 50;
-			var position = locator.GetPositionAsync().Result;
-			Toast.MakeText(this, "Lat: "+position.Latitude + " - Long: "+position.Longitude, ToastLength.Long);
-			//Finish();
+			var position = await locator.GetPositionAsync(TimeSpan.FromMilliseconds(1));
+			Toast.MakeText(ApplicationContext, "Lat: " + position.Latitude + " - Long: " + position.Longitude, ToastLength.Long).Show();
+			return position;
 		}
 
 	}
