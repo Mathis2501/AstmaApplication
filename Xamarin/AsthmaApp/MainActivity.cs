@@ -31,11 +31,19 @@ namespace AsthmaApp
 
 
 			questionnaireButton.Click += QuestionnaireButton_Click;
+
+			alarmButton.Click += AlarmButton_Click;
 		}
+
+		
 
 		private void QuestionnaireButton_Click(object sender, EventArgs e)
 		{
 			StartActivity(typeof(QuestionnaireActivity));
+		}
+		private void AlarmButton_Click(object sender, EventArgs e)
+		{
+			StartActivity(typeof(AlarmActivity));
 		}
 	}
 }
