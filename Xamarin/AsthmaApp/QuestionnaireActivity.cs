@@ -43,7 +43,7 @@ namespace AsthmaApp
 		private void FinishButton_Click(object sender, EventArgs e)
 		{
 			GetCurrentPosition(); // Wait() låser threaden
-			//Finish();
+			
 		}
 
 		private async Task<Position> GetCurrentPosition()
@@ -52,7 +52,8 @@ namespace AsthmaApp
 			locator.DesiredAccuracy = 50;
 			var position = await locator.GetPositionAsync(TimeSpan.FromMilliseconds(1));
 			Toast.MakeText(ApplicationContext, "Lat: " + position.Latitude + " - Long: " + position.Longitude, ToastLength.Long).Show();
-			return position;
+            Finish();
+            return position;
 		}
 
 	}
