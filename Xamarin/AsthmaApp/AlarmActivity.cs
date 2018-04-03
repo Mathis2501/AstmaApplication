@@ -27,7 +27,7 @@ namespace AsthmaApp
 			AlarmList = FindViewById<ListView>(Resource.Id.AlarmListView);			
 			AlarmList.Adapter = adapter;
 
-			FindViewById<Button>(Resource.Id.AddButton).Click += AddButton_Click; ;
+			FindViewById<Button>(Resource.Id.AddButton).Click += AddButton_Click;
 		}
 
 		private void AddButton_Click(object sender, EventArgs e)
