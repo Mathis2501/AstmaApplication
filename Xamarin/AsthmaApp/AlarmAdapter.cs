@@ -11,7 +11,7 @@ namespace AsthmaApp
 {
 	class AlarmAdapter : BaseAdapter
 	{
-		Alarm[] Alarms;
+		public List<Alarm> Alarms;
 
 		Activity Activity;
 
@@ -21,7 +21,7 @@ namespace AsthmaApp
 			Fill();
 		}
 
-		public override int Count => Alarms.Length;
+		public override int Count => Alarms.Count;
 
 		public override Java.Lang.Object GetItem(int position)
 		{
@@ -56,7 +56,7 @@ namespace AsthmaApp
 		private void Fill()
 		{
 			// Mock
-			Alarms = new[]
+			Alarms = new List<Alarm>()
 			{
 				new Alarm(12, 0, 0, true),
 				new Alarm(13, 20, 0, true)
