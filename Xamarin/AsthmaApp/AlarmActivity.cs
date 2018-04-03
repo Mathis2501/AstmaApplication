@@ -25,6 +25,13 @@ namespace AsthmaApp
 			var AlarmAdapter = new AlarmAdapter(this);
 			AlarmList = FindViewById<ListView>(Resource.Id.AlarmListView);			
 			AlarmList.Adapter = AlarmAdapter;
+
+			FindViewById<Button>(Resource.Id.AddButton).Click += AddButton_Click; ;
+		}
+
+		private void AddButton_Click(object sender, EventArgs e)
+		{
+			Toast.MakeText(ApplicationContext, "Alarmer++", ToastLength.Long);
 		}
 	}
 }
