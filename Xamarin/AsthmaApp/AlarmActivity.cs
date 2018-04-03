@@ -26,7 +26,24 @@ namespace AsthmaApp
 			AlarmList = FindViewById<ListView>(Resource.Id.AlarmListView);			
 			AlarmList.Adapter = AlarmAdapter;
 
+			var toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
+			SetActionBar(toolbar);
+			ActionBar.Title = "Alarms";
+
 			FindViewById<Button>(Resource.Id.AddButton).Click += AddButton_Click;
+		}
+
+		public override bool OnCreateOptionsMenu(IMenu menu)
+		{
+			MenuInflater.Inflate(Resource.Menu.top_menus, menu);
+			return base.OnCreateOptionsMenu(menu);
+		}
+
+		public override bool OnOptionsItemSelected(IMenuItem item)
+		{
+			Toast.MakeText(this, "Action selected: " + item.TitleFormatted,
+				ToastLength.Short).Show();
+			return base.OnOptionsItemSelected(item);
 		}
 
 		private void AddButton_Click(object sender, EventArgs e)
