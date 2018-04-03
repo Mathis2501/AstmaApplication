@@ -43,7 +43,7 @@ namespace AsthmaApp
 			hour.Text = Alarms[position].Hour.ToString() + "H";
 			minute.Text = Alarms[position].Minute.ToString() + "M";
 			second.Text = Alarms[position].Second.ToString() + "S";
-			activated.Text = Alarms[position].Activated.ToString(); ;
+			activated.Text = Alarms[position].Activated.ToString();
 
 			return view;
 		}
