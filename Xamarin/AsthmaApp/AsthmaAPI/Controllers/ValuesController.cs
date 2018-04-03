@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Web.Http;
 using AsthmaAPI.Models;
 
@@ -41,6 +42,8 @@ namespace AsthmaAPI.Controllers
                 asthmaDp.DateAndTime = DateTime.Now;
                 Uri assembledUri = new Uri(assembledUrl);
                 client.BaseAddress = assembledUri;
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                 SaveDP(asthmaDp);
             }
         }

@@ -31,7 +31,7 @@ namespace AsthmaApp
 
 		private void AddButton_Click(object sender, EventArgs e)
 		{
-			Toast.MakeText(ApplicationContext, "Alarmer++", ToastLength.Long);
+			Toast.MakeText(ApplicationContext, "Alarmer++", ToastLength.Long).Show();
 		}
 	}
 }
