@@ -16,23 +16,21 @@ namespace AsthmaApp
 	public class AlarmActivity : Activity
 	{
 		ListView AlarmList;
+		AlarmAdapter adapter;
 		protected override void OnCreate(Bundle savedInstanceState)
 		{
 			base.OnCreate(savedInstanceState);
 
 			SetContentView(Resource.Layout.Alarm);
 
-			var AlarmAdapter = new AlarmAdapter(this);
+			adapter = new AlarmAdapter(this);
 			AlarmList = FindViewById<ListView>(Resource.Id.AlarmListView);			
-			AlarmList.Adapter = AlarmAdapter;
+			AlarmList.Adapter = adapter;
 
 			var toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
 			SetActionBar(toolbar);
 			ActionBar.Title = "Alarms";
-
-			FindViewById<Button>(Resource.Id.AddButton).Click += AddButton_Click;
 		}
-
 		public override bool OnCreateOptionsMenu(IMenu menu)
 		{
 			MenuInflater.Inflate(Resource.Menu.top_menus, menu);
@@ -41,14 +39,13 @@ namespace AsthmaApp
 
 		public override bool OnOptionsItemSelected(IMenuItem item)
 		{
-			Toast.MakeText(this, "Action selected: " + item.TitleFormatted,
-				ToastLength.Short).Show();
+			if(item.ItemId == Resource.Id.menu_add)
+			{
+				Random rand = new Random();
+				adapter.Alarms.Add(new Alarm(rand.Next(24), rand.Next(60), rand.Next(60), true));
+				adapter.NotifyDataSetChanged();
+			}
 			return base.OnOptionsItemSelected(item);
-		}
-
-		private void AddButton_Click(object sender, EventArgs e)
-		{
-			Toast.MakeText(ApplicationContext, "Alarmer++", ToastLength.Long).Show();
 		}
 	}
 }
