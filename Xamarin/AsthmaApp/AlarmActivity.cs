@@ -16,22 +16,25 @@ namespace AsthmaApp
 	public class AlarmActivity : Activity
 	{
 		ListView AlarmList;
+		AlarmAdapter adapter;
 		protected override void OnCreate(Bundle savedInstanceState)
 		{
 			base.OnCreate(savedInstanceState);
 
 			SetContentView(Resource.Layout.Alarm);
 
-			var AlarmAdapter = new AlarmAdapter(this);
+			adapter = new AlarmAdapter(this);
 			AlarmList = FindViewById<ListView>(Resource.Id.AlarmListView);			
-			AlarmList.Adapter = AlarmAdapter;
+			AlarmList.Adapter = adapter;
 
 			FindViewById<Button>(Resource.Id.AddButton).Click += AddButton_Click; ;
 		}
 
 		private void AddButton_Click(object sender, EventArgs e)
 		{
-			Toast.MakeText(ApplicationContext, "Alarmer++", ToastLength.Long);
+			Random rand = new Random();
+			adapter.Alarms.Add(new Alarm(rand.Next(24), rand.Next(60), rand.Next(60), true));
+			adapter.NotifyDataSetChanged();
 		}
 	}
 }
