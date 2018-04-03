@@ -43,7 +43,14 @@ namespace AsthmaApp
 				Alarms[position].Second.ToString() + "S";
 			activated.Text = "Aktiveret: "+Alarms[position].Activated.ToString();
 
+			time.Click += Time_Click;
 			return view;
+		}
+
+		private void Time_Click(object sender, EventArgs e)
+		{
+			var time = (TextView)sender;
+			time.Text = "You clicked me!"
 		}
 
 		private void Fill()
