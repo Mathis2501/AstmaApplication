@@ -13,4 +13,14 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginLeft="5dp" />
+	<TextView
+        android:id="@+id/SecondText"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="5dp" />
+	<TextView
+        android:id="@+id/ActivatedText"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="5dp" />
 </LinearLayout>

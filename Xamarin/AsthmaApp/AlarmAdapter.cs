@@ -38,8 +38,12 @@ namespace AsthmaApp
 			var view = convertView ?? Activity.LayoutInflater.Inflate(Resource.Layout.AlarmItem, parent, false);
 			var hour = view.FindViewById<TextView>(Resource.Id.HourText);
 			var minute = view.FindViewById<TextView>(Resource.Id.MinuteText);
-			hour.Text = Alarms[position].Hour.ToString();
-			minute.Text = Alarms[position].Minute.ToString();
+			var second = view.FindViewById<TextView>(Resource.Id.SecondText);
+			var activated = view.FindViewById<TextView>(Resource.Id.ActivatedText);
+			hour.Text = Alarms[position].Hour.ToString() + "H";
+			minute.Text = Alarms[position].Minute.ToString() + "M";
+			second.Text = Alarms[position].Second.ToString() + "S";
+			activated.Text = Alarms[position].Activated.ToString(); ;
 
 			return view;
 		}
