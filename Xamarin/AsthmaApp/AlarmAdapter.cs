@@ -50,7 +50,7 @@ namespace AsthmaApp
 		private void Time_Click(object sender, EventArgs e)
 		{
 			var time = (TextView)sender;
-			time.Text = "You clicked me!"
+			time.Text = "You clicked me!";
 		}
 
 		private void Fill()
