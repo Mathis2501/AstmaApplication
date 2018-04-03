@@ -36,14 +36,12 @@ namespace AsthmaApp
 		public override View GetView(int position, View convertView, ViewGroup parent)
 		{
 			var view = convertView ?? Activity.LayoutInflater.Inflate(Resource.Layout.AlarmItem, parent, false);
-			var hour = view.FindViewById<TextView>(Resource.Id.HourText);
-			var minute = view.FindViewById<TextView>(Resource.Id.MinuteText);
-			var second = view.FindViewById<TextView>(Resource.Id.SecondText);
+			var time = view.FindViewById<TextView>(Resource.Id.TimeText);
 			var activated = view.FindViewById<TextView>(Resource.Id.ActivatedText);
-			hour.Text = Alarms[position].Hour.ToString() + "H";
-			minute.Text = Alarms[position].Minute.ToString() + "M";
-			second.Text = Alarms[position].Second.ToString() + "S";
-			activated.Text = Alarms[position].Activated.ToString();
+			time.Text = "Tidspunkt: "+ Alarms[position].Hour.ToString() + "H " + 
+				Alarms[position].Minute.ToString() + "M " + 
+				Alarms[position].Second.ToString() + "S";
+			activated.Text = "Aktiveret: "+Alarms[position].Activated.ToString();
 
 			return view;
 		}
