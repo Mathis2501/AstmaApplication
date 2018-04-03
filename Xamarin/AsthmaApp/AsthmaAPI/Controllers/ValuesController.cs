@@ -11,6 +11,15 @@ namespace AsthmaAPI.Controllers
     public class ValuesController : ApiController
     {
         private const string baseUrl = "http://api.openweathermap.org/data/2.5/weather?";
+        private const string lat = "lat=";
+        private const string lon = "&lon=";
+        private HttpClient client;
+
+        public ValuesController()
+        {
+            client = new HttpClient();
+        }
+        
         // GET api/values
         public IEnumerable<string> Get()
         {
@@ -26,9 +35,14 @@ namespace AsthmaAPI.Controllers
         // POST api/values
         public void Post(AsthmaDP asthmaDp)
         {
-
-            SaveDP(asthmaDp);
-            
+            string assembledUrl = baseUrl + lat + asthmaDp.Latitude + lon + asthmaDp.Longitude;
+            if (Uri.IsWellFormedUriString(assembledUrl, UriKind.RelativeOrAbsolute))
+            {
+                asthmaDp.DateAndTime = DateTime.Now;
+                Uri assembledUri = new Uri(assembledUrl);
+                client.BaseAddress = assembledUri;
+                SaveDP(asthmaDp);
+            }
         }
 
         private void SaveDP(AsthmaDP asthmaDp)
