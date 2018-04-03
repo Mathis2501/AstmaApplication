@@ -5,12 +5,12 @@
     android:layout_height="match_parent">
     <TextView
         android:id="@+id/TimeText"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_margin="5dp" />
     <TextView
         android:id="@+id/ActivatedText"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_marginLeft="5dp" />
 </LinearLayout>
