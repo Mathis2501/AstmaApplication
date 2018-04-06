@@ -39,7 +39,7 @@ namespace AsthmaApp
 			{
 				Random rand = new Random();
 				adapter.Alarms.Add(new Alarm(rand.Next(24), rand.Next(60), rand.Next(60), true));
-				adapter.NotifyDataSetChanged();
+				adapter.NotifyDataSetChanged();	
 			}
 			return base.OnOptionsItemSelected(item);
 		}
