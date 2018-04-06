@@ -41,6 +41,28 @@ namespace AsthmaApp
 			}
 		}
 		
+		public partial class Color
+		{
+			
+			// aapt resource value: 0x7f040000
+			public const int colorPrimary = 2130968576;
+			
+			// aapt resource value: 0x7f040001
+			public const int colorPrimaryDark = 2130968577;
+			
+			// aapt resource value: 0x7f040002
+			public const int colorPrimaryLight = 2130968578;
+			
+			static Color()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Color()
+			{
+			}
+		}
+		
 		public partial class Drawable
 		{
 			
@@ -60,38 +82,35 @@ namespace AsthmaApp
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f070004
-			public const int ActivatedText = 2131165188;
+			// aapt resource value: 0x7f080003
+			public const int ActivatedText = 2131230723;
 			
-			// aapt resource value: 0x7f070002
-			public const int AddButton = 2131165186;
+			// aapt resource value: 0x7f080001
+			public const int AddButton = 2131230721;
 			
-			// aapt resource value: 0x7f070001
-			public const int AlarmListView = 2131165185;
+			// aapt resource value: 0x7f080000
+			public const int AlarmListView = 2131230720;
 			
-			// aapt resource value: 0x7f070003
-			public const int TimeText = 2131165187;
+			// aapt resource value: 0x7f080002
+			public const int TimeText = 2131230722;
 			
-			// aapt resource value: 0x7f070008
-			public const int alarmbutton = 2131165192;
+			// aapt resource value: 0x7f080007
+			public const int alarmbutton = 2131230727;
 			
-			// aapt resource value: 0x7f070009
-			public const int finishbutton = 2131165193;
+			// aapt resource value: 0x7f080008
+			public const int finishbutton = 2131230728;
 			
-			// aapt resource value: 0x7f070006
-			public const int mapbutton = 2131165190;
+			// aapt resource value: 0x7f080005
+			public const int mapbutton = 2131230725;
 			
-			// aapt resource value: 0x7f07000a
-			public const int menu_add = 2131165194;
+			// aapt resource value: 0x7f080009
+			public const int menu_add = 2131230729;
 			
-			// aapt resource value: 0x7f070005
-			public const int questionnairebutton = 2131165189;
+			// aapt resource value: 0x7f080004
+			public const int questionnairebutton = 2131230724;
 			
-			// aapt resource value: 0x7f070007
-			public const int rewardsbutton = 2131165191;
-			
-			// aapt resource value: 0x7f070000
-			public const int toolbar = 2131165184;
+			// aapt resource value: 0x7f080006
+			public const int rewardsbutton = 2131230726;
 			
 			static Id()
 			{
@@ -118,9 +137,6 @@ namespace AsthmaApp
 			// aapt resource value: 0x7f030003
 			public const int Questionnaire = 2130903043;
 			
-			// aapt resource value: 0x7f030004
-			public const int toolbar = 2130903044;
-			
 			static Layout()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
@@ -134,8 +150,8 @@ namespace AsthmaApp
 		public partial class Menu
 		{
 			
-			// aapt resource value: 0x7f060000
-			public const int top_menus = 2131099648;
+			// aapt resource value: 0x7f070000
+			public const int top_menus = 2131165184;
 			
 			static Menu()
 			{
@@ -150,11 +166,11 @@ namespace AsthmaApp
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f040001
-			public const int ApplicationName = 2130968577;
+			// aapt resource value: 0x7f050001
+			public const int ApplicationName = 2131034113;
 			
-			// aapt resource value: 0x7f040000
-			public const int Hello = 2130968576;
+			// aapt resource value: 0x7f050000
+			public const int Hello = 2131034112;
 			
 			static String()
 			{
@@ -169,8 +185,8 @@ namespace AsthmaApp
 		public partial class Style
 		{
 			
-			// aapt resource value: 0x7f050000
-			public const int MyTheme = 2131034112;
+			// aapt resource value: 0x7f060000
+			public const int MyTheme = 2131099648;
 			
 			static Style()
 			{

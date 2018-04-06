@@ -26,10 +26,6 @@ namespace AsthmaApp
 			adapter = new AlarmAdapter(this);
 			AlarmList = FindViewById<ListView>(Resource.Id.AlarmListView);			
 			AlarmList.Adapter = adapter;
-
-			var toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
-			SetActionBar(toolbar);
-			ActionBar.Title = "Alarms";
 		}
 		public override bool OnCreateOptionsMenu(IMenu menu)
 		{
