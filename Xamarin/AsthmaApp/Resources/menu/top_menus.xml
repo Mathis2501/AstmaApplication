@@ -4,5 +4,5 @@
     android:id="@+id/menu_add"
     android:showAsAction="ifRoom"
     android:title="Add"
-		android:icon="@drawable/icon"/>
+		android:icon="@drawable/plus48"/>
 </menu>
