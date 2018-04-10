@@ -85,35 +85,41 @@ namespace AsthmaApp
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f080003
-			public const int ActivatedText = 2131230723;
-			
-			// aapt resource value: 0x7f080001
-			public const int AddButton = 2131230721;
+			// aapt resource value: 0x7f080005
+			public const int ActivatedText = 2131230725;
 			
 			// aapt resource value: 0x7f080000
 			public const int AlarmListView = 2131230720;
 			
-			// aapt resource value: 0x7f080002
-			public const int TimeText = 2131230722;
+			// aapt resource value: 0x7f080003
+			public const int LayoutId = 2131230723;
 			
-			// aapt resource value: 0x7f080007
-			public const int alarmbutton = 2131230727;
-			
-			// aapt resource value: 0x7f080008
-			public const int finishbutton = 2131230728;
-			
-			// aapt resource value: 0x7f080005
-			public const int mapbutton = 2131230725;
-			
-			// aapt resource value: 0x7f080009
-			public const int menu_add = 2131230729;
+			// aapt resource value: 0x7f080001
+			public const int TimePicker = 2131230721;
 			
 			// aapt resource value: 0x7f080004
-			public const int questionnairebutton = 2131230724;
+			public const int TimeText = 2131230724;
+			
+			// aapt resource value: 0x7f080002
+			public const int WeekdayLinearLayout = 2131230722;
+			
+			// aapt resource value: 0x7f080009
+			public const int alarmbutton = 2131230729;
+			
+			// aapt resource value: 0x7f08000a
+			public const int finishbutton = 2131230730;
+			
+			// aapt resource value: 0x7f080007
+			public const int mapbutton = 2131230727;
+			
+			// aapt resource value: 0x7f08000b
+			public const int menu_add = 2131230731;
 			
 			// aapt resource value: 0x7f080006
-			public const int rewardsbutton = 2131230726;
+			public const int questionnairebutton = 2131230726;
+			
+			// aapt resource value: 0x7f080008
+			public const int rewardsbutton = 2131230728;
 			
 			static Id()
 			{
@@ -132,13 +138,16 @@ namespace AsthmaApp
 			public const int Alarm = 2130903040;
 			
 			// aapt resource value: 0x7f030001
-			public const int AlarmItem = 2130903041;
+			public const int AlarmDetails = 2130903041;
 			
 			// aapt resource value: 0x7f030002
-			public const int Main = 2130903042;
+			public const int AlarmItem = 2130903042;
 			
 			// aapt resource value: 0x7f030003
-			public const int Questionnaire = 2130903043;
+			public const int Main = 2130903043;
+			
+			// aapt resource value: 0x7f030004
+			public const int Questionnaire = 2130903044;
 			
 			static Layout()
 			{

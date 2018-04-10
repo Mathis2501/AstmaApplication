@@ -9,6 +9,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Newtonsoft.Json;
 
 namespace AsthmaApp
 {
@@ -26,8 +27,17 @@ namespace AsthmaApp
 			adapter = new AlarmAdapter(this);
 			AlarmList = FindViewById<ListView>(Resource.Id.AlarmListView);			
 			AlarmList.Adapter = adapter;
+            AlarmList.ItemClick += AlarmList_ItemClick;
 		}
-		public override bool OnCreateOptionsMenu(IMenu menu)
+
+        private void AlarmList_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
+        {
+            Intent intent = new Intent(this, typeof(AlarmDetailsActivity));
+            intent.PutExtra("AlarmData", JsonConvert.SerializeObject(adapter.Alarms[e.Position]));
+            StartActivity(intent);
+        }
+
+        public override bool OnCreateOptionsMenu(IMenu menu)
 		{
 			MenuInflater.Inflate(Resource.Menu.top_menus, menu);
 			return base.OnCreateOptionsMenu(menu);
@@ -38,7 +48,7 @@ namespace AsthmaApp
 			if(item.ItemId == Resource.Id.menu_add)
 			{
 				Random rand = new Random();
-				adapter.Alarms.Add(new Alarm(rand.Next(24), rand.Next(60), rand.Next(60), true));
+				adapter.Alarms.Add(new Alarm(rand.Next(24), rand.Next(60), new bool[]{true, true, true, false, false, false, true}));
 				adapter.NotifyDataSetChanged();	
 			}
 			return base.OnOptionsItemSelected(item);

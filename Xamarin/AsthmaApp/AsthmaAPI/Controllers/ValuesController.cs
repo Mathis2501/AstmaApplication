@@ -14,6 +14,7 @@ namespace AsthmaAPI.Controllers
         private const string baseUrl = "http://api.openweathermap.org/data/2.5/weather?";
         private const string lat = "lat=";
         private const string lon = "&lon=";
+        private const string key = "&APPID=92d391290f8311443c916abb4bcbc42f";
         private HttpClient client;
 
         public ValuesController()
@@ -36,14 +37,14 @@ namespace AsthmaAPI.Controllers
         // POST api/values
         public void Post(AsthmaDP asthmaDp)
         {
-            string assembledUrl = baseUrl + lat + asthmaDp.Latitude + lon + asthmaDp.Longitude;
+            string assembledUrl = baseUrl + lat + asthmaDp.Latitude + lon + asthmaDp.Longitude + key;
             if (Uri.IsWellFormedUriString(assembledUrl, UriKind.RelativeOrAbsolute))
             {
+                assembledUrl = assembledUrl.Replace(",", ".");
+                AsthmaDP ADP = new AsthmaDP();
                 asthmaDp.DateAndTime = DateTime.Now;
                 Uri assembledUri = new Uri(assembledUrl);
-                client.BaseAddress = assembledUri;
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                ADP = ApiCaller.RunAsync(assembledUri).Result;
                 SaveDP(asthmaDp);
             }
         }

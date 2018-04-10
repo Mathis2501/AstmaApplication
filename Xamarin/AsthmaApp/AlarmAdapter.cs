@@ -36,31 +36,19 @@ namespace AsthmaApp
 		public override View GetView(int position, View convertView, ViewGroup parent)
 		{
 			var view = convertView ?? Activity.LayoutInflater.Inflate(Resource.Layout.AlarmItem, parent, false);
-			var time = view.FindViewById<TextView>(Resource.Id.TimeText);
+		    //var linearlayout = view.FindViewById<LinearLayout>(Resource.Id.LayoutId);
+		    var time = view.FindViewById<TextView>(Resource.Id.TimeText);
 			var activated = view.FindViewById<TextView>(Resource.Id.ActivatedText);
-			time.Text = "Tidspunkt: "+ Alarms[position].Hour.ToString() + "H " + 
-				Alarms[position].Minute.ToString() + "M " + 
-				Alarms[position].Second.ToString() + "S";
-			activated.Text = "Aktiveret: "+Alarms[position].Activated.ToString();
-
-			time.Click += Time_Click;
+		    time.Text = "Tidspunkt: " + Alarms[position].Hour.ToString() + "H " +
+		                Alarms[position].Minute.ToString() + "M";
+			//activated.Text = "Aktiveret: "+Alarms[position].Activated.ToString();
 			return view;
-		}
-
-		private void Time_Click(object sender, EventArgs e)
-		{
-			var time = (TextView)sender;
-			time.Text = "You clicked me!";
 		}
 
 		private void Fill()
 		{
 			// Mock
-			Alarms = new List<Alarm>()
-			{
-				new Alarm(12, 0, 0, true),
-				new Alarm(13, 20, 0, true)
-			};
+			Alarms = new List<Alarm>();
 			// EndMock
 		}
 
